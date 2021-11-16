@@ -5,6 +5,7 @@ const toys = [
   touch: "fluffy",
   price: 80,
   isElectronic: true,
+  isChokingHazard: false,
 },
 {
   id: 2,
@@ -12,6 +13,7 @@ const toys = [
   touch: "hard plastic",
   price: 50,
   isElectronic: false,
+  isChokingHazard: false,
 },
 {
   id: 3,
@@ -19,6 +21,7 @@ const toys = [
   touch: "smooth metal",
   price: 3.5,
   isElectronic: false,
+  isChokingHazard: false,
 },
 ]
 
