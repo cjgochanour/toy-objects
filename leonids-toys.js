@@ -25,6 +25,28 @@ const toys = [
 },
 ]
 
+const legoSet = {
+  id: 4,
+  name: "Millenium Falcoln Lego Set",
+  touch: "hard plastic",
+  price: "600",
+  isElectronic: false,
+  isChokingHazard: true,
+}
+
+const armyMen = {
+  id: 5,
+  name: "Green Army Men",
+  touch: "hard plastic",
+  price: "1",
+  isElectronic: false,
+  isChokingHazard: true,
+}
+
+toys.push(legoSet)
+toys.push(armyMen)
+
+
 for (toy of toys){
   console.log(toy.name)
 }
