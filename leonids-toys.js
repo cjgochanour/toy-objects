@@ -46,8 +46,10 @@ const armyMen = {
 toys.push(legoSet)
 toys.push(armyMen)
 
+const toyToFind = 2
 
 for (toy of toys){
+  if (toy.id === toyToFind){
   toy.price *= 1.05
-  console.log(`The ${toy.name} costs $${toy.price}`)
+  console.log(`The ${toy.name} costs $${toy.price}`)}
 }
