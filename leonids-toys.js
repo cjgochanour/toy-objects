@@ -25,4 +25,6 @@ const toys = [
 },
 ]
 
-console.log(toys)
+for (toy of toys){
+  console.log(toy.name)
+}
