@@ -48,5 +48,5 @@ toys.push(armyMen)
 
 
 for (toy of toys){
-  console.log(toy.name)
+  console.log(`The ${toy.name} costs $${toy.price}`)
 }
