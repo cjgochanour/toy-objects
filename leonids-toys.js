@@ -1,78 +1,90 @@
 const toys = [
     {
-  id: 1,
-  name: "Tickle Me Elmo",
-  touch: "fluffy",
-  price: 80,
-  isElectronic: true,
-  isChokingHazard: false,
-},
-{
-  id: 2,
-  name: "Nerf Gun",
-  touch: "hard plastic",
-  price: 50,
-  isElectronic: false,
-  isChokingHazard: false,
-},
-{
-  id: 3,
-  name: "Slinky",
-  touch: "smooth metal",
-  price: 3.5,
-  isElectronic: false,
-  isChokingHazard: false,
-},
-]
+        id: 1,
+        name: "Tickle Me Elmo",
+        touch: "fluffy",
+        price: 80,
+        isElectronic: true,
+        isChokingHazard: false,
+    },
+    {
+        id: 2,
+        name: "Nerf Gun",
+        touch: "hard plastic",
+        price: 50,
+        isElectronic: false,
+        isChokingHazard: false,
+    },
+    {
+        id: 3,
+        name: "Slinky",
+        touch: "smooth metal",
+        price: 3.5,
+        isElectronic: false,
+        isChokingHazard: false,
+    },
+];
 
 const legoSet = {
-  id: 4,
-  name: "Millenium Falcoln Lego Set",
-  touch: "hard plastic",
-  price: 600,
-  isElectronic: false,
-  isChokingHazard: true,
-}
+    id: 4,
+    name: "Millenium Falcoln Lego Set",
+    touch: "hard plastic",
+    price: 600,
+    isElectronic: false,
+    isChokingHazard: true,
+};
 
 const armyMen = {
-  id: 5,
-  name: "Green Army Men",
-  touch: "hard plastic",
-  price: 1,
-  isElectronic: false,
-  isChokingHazard: true,
-}
+    id: 5,
+    name: "Green Army Men",
+    touch: "hard plastic",
+    price: 1,
+    isElectronic: false,
+    isChokingHazard: true,
+};
 
-toys.push(legoSet)
-toys.push(armyMen)
+toys.push(legoSet);
+toys.push(armyMen);
 
 const yoyo = {
-  name: "Yo-Yo",
-  touch: "hard plastic",
-  price: 50,
-  isElectronic: false,
-  isChokingHazard: true
+    name: "Yo-Yo",
+    touch: "hard plastic",
+    price: 50,
+    isElectronic: false,
+    isChokingHazard: true,
+};
+
+function addToyToStore(newToy) {
+    const lastIndex = toys.length - 1;
+    const lastToy = toys[lastIndex];
+    const maxID = lastToy.id;
+    const newID = maxID + 1;
+
+    newToy.id = newID;
+    toys.push(newToy);
 }
 
-function addToyToStore(newToy){
-  const lastIndex = toys.length - 1
-  const lastToy = toys[lastIndex]
-  const maxID = lastToy.id
-  const newID = maxID + 1
+addToyToStore(yoyo);
 
-  newToy.id = newID
-  toys.push(newToy)
+for (toy of toys) {
+    console.log(`The ${toy.name} costs $${toy.price}.`);
 }
 
-addToyToStore(yoyo)
+// Explorer chapter 1 -- this will remove
 
-for (toy of toys){
-  console.log(`The ${toy.name} costs $${toy.price}.`)
-}
+const removeProduct = (toyID) => {
+    for (const toy of toys) {
+        if (toy.id === toyID) {
+            toyID -= 1;
+            toys.splice(toyID, 1);
+        }
+    }
+    return toys;
+};
 
-console.log(toys)
+console.log(removeProduct(3));
 
-//as unprofessional as it may be, the chapter specified to keep the following lines in the code but commented out
+// the chapter specified to comment out the "find" code
 
 // const toyToFind = 2
 
