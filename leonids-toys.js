@@ -43,9 +43,6 @@ const armyMen = {
     isChokingHazard: true,
 };
 
-toys.push(legoSet);
-toys.push(armyMen);
-
 const yoyo = {
     name: "Yo-Yo",
     touch: "hard plastic",
@@ -54,7 +51,14 @@ const yoyo = {
     isChokingHazard: true,
 };
 
-function addToyToStore(newToy) {
+// Map Challenge
+
+const prices = new Map();
+prices.set(toys[0], 80);
+prices.set(toys[1], 50);
+prices.set(toys[2], 3.5);
+
+function addToyToStore(newToy, price) {
     const lastIndex = toys.length - 1;
     const lastToy = toys[lastIndex];
     const maxID = lastToy.id;
@@ -62,15 +66,20 @@ function addToyToStore(newToy) {
 
     newToy.id = newID;
     toys.push(newToy);
+    prices.set(toys[maxID], price);
 }
 
-addToyToStore(yoyo);
+addToyToStore(yoyo, 50);
+addToyToStore(legoSet, 600);
+addToyToStore(armyMen, 1);
 
-for (toy of toys) {
-    console.log(`The ${toy.name} costs $${toy.price}.`);
+console.log(prices);
+
+for (let [toys, price] of prices) {
+    console.log(`The ${toys.name} costs $${price.toFixed(2)}`);
 }
 
-// Explorer chapter 1 -- this will remove
+// Explorer chapter 1
 
 const removeProduct = (toyID) => {
     for (const toy of toys) {
@@ -82,7 +91,7 @@ const removeProduct = (toyID) => {
     return toys;
 };
 
-console.log(removeProduct(3));
+// Explorer Chapter 1
 
 const currentInventory = [
     "Muscle Man",
